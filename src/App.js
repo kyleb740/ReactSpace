@@ -1,26 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter,
+  Route,
+  Switch
+} from 'react-router-dom';
+
+// App Components/Images
+
+import Space from './images/space.jpg';
+import Home from './components/home.js';
+import Astro from './components/astronauts.js';
+import Mars from './components/mars.js';
+import NotFound from './components/notfound.js';
+
+const backStyle = {
+  backgroundImage: `url(${Space})`,
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'noRepeat',
+}
 
 class App extends Component {
+
+
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <BrowserRouter>
+          <div className="back" style={ backStyle }>
+          <div className="content" >
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/astro" component={Astro} />
+              <Route path="/mars" component={Mars} />
+              <Route component={NotFound} />
+            </Switch>
+          </div>
+          </div>
+        </BrowserRouter>
     );
   }
 }
