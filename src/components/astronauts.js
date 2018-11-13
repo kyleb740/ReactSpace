@@ -22,7 +22,7 @@ class Astro extends Component {
     return (
       <div>
         < Header />
-        <p>Here is a list of the astronauts currently in space with the craft they are on and below a map showing their birthplace</p>
+        <p>Here is a list of the astronauts currently in space with the craft they are on and below a map showing their birthplace. Also on the map is the current location of the International Space Station orbiting above Earth.</p>
             <ul>
               {this.state.astro.map(person => (
                 <li className="astroList">{person.name} - {person.craft} </li>

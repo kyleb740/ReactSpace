@@ -5,7 +5,8 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <h1 className="title">Space maybe the final frontier</h1>
+        <h1 className="title">Space</h1>
+        <h3>Roads!?!... Where we're going we don't need roads!</h3>
         <ul className="nav">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/astro">Astronauts</Link></li>

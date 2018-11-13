@@ -7,7 +7,8 @@ class Mars extends Component {
     super(props)
     this.state = {
       date: '',
-      photo: []
+      photo: [],
+      weather: []
 
     }
     this.onDateChange = this.onDateChange.bind(this);
@@ -27,11 +28,26 @@ class Mars extends Component {
       .then(data => this.setState({ photo: data.photos}))
   }
 
+  componentDidMount() {
+    fetch('https://api.maas2.jiinxt.com')
+      .then(response => response.json())
+      .then(data => {this.setState({ weather: data })})
+  }
+
   render() {
     return (
       <div>
         < Header />
         <h3>Mars Rovers</h3>
+        <p>Here is the most recent weather on Mars sent by the Curiosity Rover:</p>
+            <ul>
+              <li>Sol (Day on Mars): {this.state.weather.sol}</li>
+              <li>Minimum Temp: {this.state.weather.min_temp}c</li>
+              <li>Maximum Temp: {this.state.weather.max_temp}c</li>
+              <li>Outlook: {this.state.weather.atmo_opacity}</li>
+              <li>Sunrise: {this.state.weather.sunrise}</li>
+              <li>Sunset: {this.state.weather.sunset}</li>
+            </ul>
         <p>Seven rovers have been sent to Mars starting in 1971.  Enter a date to see if one of these rovers captured pictures of the Mars' surface on that day!</p>
           <form onSubmit={this.photoSearch}>
               <label >Enter Date
