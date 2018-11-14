@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 
 import Header from './header.js';
 
+import Ground from './../images/mars.jpg';
+
+const marsStyle = {
+  backgroundImage: `url(${Ground})`,
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'noRepeat',
+}
+
 class Mars extends Component {
   constructor(props) {
     super(props)
@@ -38,33 +47,37 @@ class Mars extends Component {
     return (
       <div>
         < Header />
-        <h3>Mars Rovers</h3>
-        <p>Here is the most recent weather on Mars sent by the Curiosity Rover:</p>
-            <ul>
-              <li>Sol (Day on Mars): {this.state.weather.sol}</li>
-              <li>Minimum Temp: {this.state.weather.min_temp}c</li>
-              <li>Maximum Temp: {this.state.weather.max_temp}c</li>
-              <li>Outlook: {this.state.weather.atmo_opacity}</li>
-              <li>Sunrise: {this.state.weather.sunrise}</li>
-              <li>Sunset: {this.state.weather.sunset}</li>
-            </ul>
-        <p>Seven rovers have been sent to Mars starting in 1971.  Enter a date to see if one of these rovers captured pictures of the Mars' surface on that day!</p>
-          <form onSubmit={this.photoSearch}>
-              <label >Enter Date
-                  <input
-                    onChange={this.onDateChange}
-                    placeholder="YYYY-MM-DD"
-                    className="date"
-                    name='date'
-                    value={this.state.date}/>
-              </label><br></br>
-              <input type="submit" value="Submit" />
-          </form>
-            <div>
-              {this.state.photo.map(p => (
-                <img className="marsPhoto" src={p.img_src}></img>
-              ))}
-            </div>
+        <div className="mars">
+          <h3>Mars Rovers</h3>
+          <p>Here is the most recent weather on Mars sent by the Curiosity Rover:</p>
+              <div className="weather" style={ marsStyle }>
+                <table>
+                  <tr><td>Sol (Day on Mars):</td> <td>{this.state.weather.sol}</td></tr>
+                  <tr><td>Minimum Temp: </td> <td>{this.state.weather.min_temp}c</td></tr>
+                  <tr><td>Maximum Temp: </td> <td>{this.state.weather.max_temp}c</td></tr>
+                  <tr><td>Outlook: </td> <td>{this.state.weather.atmo_opacity}</td></tr>
+                  <tr><td>Sunrise: </td> <td>{this.state.weather.sunrise}</td></tr>
+                  <tr><td>Sunset: </td> <td>{this.state.weather.sunset}</td></tr>
+                </table>
+              </div>
+          <p>Seven rovers have been sent to Mars starting in 1971.  Enter a date to see if one of these rovers captured pictures of the Mars' surface on that day!</p>
+            <form onSubmit={this.photoSearch}>
+                <label >Enter Date
+                    <input
+                      onChange={this.onDateChange}
+                      placeholder="YYYY-MM-DD"
+                      className="date"
+                      name='date'
+                      value={this.state.date}/>
+                </label><br></br>
+                <input type="submit" value="Submit" />
+            </form>
+              <div>
+                {this.state.photo.map(p => (
+                  <img className="marsPhoto" src={p.img_src}></img>
+                ))}
+              </div>
+        </div>
       </div>
     );
   }

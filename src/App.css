@@ -1,48 +1,116 @@
-.title {
-  text-align: center;
-}
-
 
 .content {
   text-align: center;
   margin: 0 auto 0 auto;
-  width: 90%;
-  padding-top: 5%;
-  height: 150vh;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Header/Background Image/Nav */
+.title {
+  text-align: center;
+  margin-top: 0;
+  padding-top: 10%;
+}
+
+.back {
+  height: 70vh;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.roads {
+  padding: 10% 5%;
 }
 
 .nav {
-  list-style-type: none;
   text-align: center;
+  margin: 0 10%;
+
 }
 
 .nav li {
+  margin: 0 auto;
   background-color: lightblue;
-  margin-right: 5px;
-  display: inline;
   border: 1px solid black;
   padding: 4px;
 }
 
 .nav a {
   text-decoration: none;
+  color: purple;
 }
 
-ul {
-  list-style-type: none;
+
+/* Home */
+
+
+
+/* Astronauts */
+.astro, .mars {
+  color: black;
+  border: 1px solid black;
+  margin: 4%;
+  padding: 5px;
 }
 
 .astroList {
   font-weight: bold;
 }
 
+
+/* Mars */
+
 .marsPhoto {
   height: auto;
-  width: 30%;
+  width: 60%;
   margin: 10px;
 }
 
 .date {
   margin-left: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.weather {
+  text-align: left;
+  margin: 0 20%;
+}
+
+table {
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Media Query */
+@media only screen and (min-width: 530px) {
+
+  .nav li {
+    margin-right: 5px;
+    display: inline;
+  }
+
+  .weather {
+    margin: 0 30%;
+  }
+
+  .marsPhoto {
+    width: 30%;
+  }
+
+}
+
+@media only screen and (min-width: 820px) {
+
+  .roads {
+    padding: 3% 5%;
+  }
+
+
+
 }

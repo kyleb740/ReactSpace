@@ -22,6 +22,7 @@ export class MapContainer extends Component {
     const style = {
         width: '90%',
         height: '70%',
+        margin: '0 auto'
       }
 
     const lat = this.state.latitude
@@ -30,7 +31,7 @@ export class MapContainer extends Component {
     return (
       <Map
         google={this.props.google}
-        zoom={1.5}
+        zoom={1}
         style={style}
         initialCenter={{
             lat: 27,
