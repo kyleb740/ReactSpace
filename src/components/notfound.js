@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 
 import Header from './header.js';
+import Error from './../images/error.png';
+
+const Nope = {
+  color: 'black',
+  textAlign: 'center'
+}
+
 
 class NotFound extends Component {
   render() {
     return (
       <div>
         < Header />
-        <i>error_outline</i>
-        <h2>Page Not Found</h2>
+        <h2 style= { Nope }>Page Not Found</h2>
+        <img src={Error} alt="error"></img>
       </div>
     );
   }

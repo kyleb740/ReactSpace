@@ -9,6 +9,7 @@ ul {
   padding: 0;
 }
 
+
 /* Header/Background Image/Nav */
 .title {
   text-align: center;
@@ -45,16 +46,16 @@ ul {
 }
 
 
-/* Home */
-
-
-
 /* Astronauts */
-.astro, .mars {
+.astro, .mars, .about {
   color: black;
   border: 1px solid black;
   margin: 4%;
   padding: 5px;
+}
+
+.about {
+  padding: 20px;
 }
 
 .astroList {
@@ -63,7 +64,6 @@ ul {
 
 
 /* Mars */
-
 .marsPhoto {
   height: auto;
   width: 60%;
