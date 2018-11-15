@@ -15,7 +15,11 @@ class Astro extends Component {
     fetch('http://api.open-notify.org/astros.json')
       .then(response => response.json())
       .then(data => {this.setState({ astro: data.people })})
+      .catch(error => {
+        console.log('Error fetching and parsing data', error)
+      })
   }
+
 
 
   render() {

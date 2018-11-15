@@ -35,12 +35,18 @@ class Mars extends Component {
     fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${this.state.date}&api_key=W0kxxK1AslOYwTjvlulQwZDQPvp8Ns1fsJ7aZpuP`)
       .then(response => response.json())
       .then(data => this.setState({ photo: data.photos}))
+      .catch(error => {
+        console.log('Error fetching and parsing data', error)
+      })
   }
 
   componentDidMount() {
     fetch('https://api.maas2.jiinxt.com')
       .then(response => response.json())
       .then(data => {this.setState({ weather: data })})
+      .catch(error => {
+        console.log('Error fetching and parsing data', error)
+      })
   }
 
   render() {

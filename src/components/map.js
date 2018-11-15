@@ -15,6 +15,9 @@ export class MapContainer extends Component {
     fetch('https://api.wheretheiss.at/v1/satellites/25544')
       .then(response => response.json())
       .then(data => {this.setState({ latitude: data.latitude, longitude: data.longitude })})
+      .catch(error => {
+        console.log('Error fetching and parsing data', error)
+      })
   }
 
 
