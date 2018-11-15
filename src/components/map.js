@@ -12,7 +12,7 @@ export class MapContainer extends Component {
   }
 
   componentDidMount(){
-    fetch('https://api.wheretheiss.at/v1/satellites/25544')
+    fetch('https://api.wheretheiss.at/v1/satellites/25544')         //API call to get ISS position
       .then(response => response.json())
       .then(data => {this.setState({ latitude: data.latitude, longitude: data.longitude })})
       .catch(error => {
@@ -22,7 +22,7 @@ export class MapContainer extends Component {
 
 
   render() {
-    const style = {
+    const style = {               //style for Google Map API
         width: '90%',
         height: '70%',
         margin: '0 auto'
@@ -54,7 +54,7 @@ export class MapContainer extends Component {
           name={'Sverdlovsk, Russia'}
           position={{lat: 56.50, lng: 60.35}} />
         <Marker
-          title={' Current Location of International Space Station '}
+          title={' Current Location of International Space Station '}       //Marker in Google API to pass lat and long of ISS from fetch call above
           name={'ISS'}
           position={{lat: lat, lng: long}} />
 

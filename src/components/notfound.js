@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// App Components/Images
 import Header from './header.js';
 import Error from './../images/error.png';
 

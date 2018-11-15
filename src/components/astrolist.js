@@ -1,10 +1,12 @@
 import React from 'react';
+
+// App Components/Images
 import List from './list.js';
 
 
 const AstroList = props => {
 
-  const results = props.data;
+  const results = props.data;                                 //Map over Astronaut API fetch call return name and craft
   let lists = results.map(person =>
     <List name={person.name} craft={person.craft}/>
   );

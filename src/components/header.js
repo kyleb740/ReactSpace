@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+// App Components/Images
 import Space from './../images/space.jpg';
 
-const backStyle = {
+const backStyle = {                           //Style for Header Background
   backgroundImage: `url(${Space})`,
   backgroundPosition: 'center',
   backgroundSize: 'cover',
@@ -17,7 +18,7 @@ class Header extends Component {
         <h1 className="title">Space</h1>
         <h4 className="roads">Roads!?!... Where we're going we don't need roads!</h4>
         <ul className="nav">
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/">Home</Link></li>      
           <li><Link to="/astro">Astronauts</Link></li>
           <li><Link to="/mars">Mars Rover</Link></li>
         </ul>

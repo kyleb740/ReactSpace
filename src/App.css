@@ -17,7 +17,7 @@ ul {
   padding-top: 10%;
 }
 
-.back {
+.back {                                       /* Font for Header Only */
   height: 70vh;
   margin: 0;
   font-family: 'Press Start 2P', cursive;
@@ -33,7 +33,7 @@ ul {
 
 }
 
-.nav li {
+.nav li {                           /* Style Route Links in Header */
   margin: 0 auto;
   background-color: lightblue;
   border: 1px solid black;
@@ -47,7 +47,7 @@ ul {
 
 
 /* Astronauts */
-.astro, .mars, .about {
+.astro, .mars, .about {               /* Style content on all routes below header */
   color: black;
   border: 1px solid black;
   margin: 4%;
@@ -58,24 +58,24 @@ ul {
   padding: 20px;
 }
 
-.astroList {
+.list {
   font-weight: bold;
 }
 
 
-/* Mars */
+/* Mars */            /* Styles all photos from Mars Rover fetch */
 .marsPhoto {
   height: auto;
   width: 60%;
   margin: 10px;
 }
 
-.date {
+.date {                 /* Where User Enters Date to fetch Mars Rover Photos */
   margin-left: 10px;
   margin-bottom: 10px;
 }
 
-.weather {
+.weather {            /* Weather div for Mars Route */
   text-align: left;
   margin: 0 20%;
 }

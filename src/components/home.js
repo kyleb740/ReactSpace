@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// App Components/Images
 import Header from './header.js';
 
 class Home extends Component {

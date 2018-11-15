@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// App Components/Images
 import Header from './header.js';
 import MapContainer from './map.js';
 import AstroList from './astrolist.js';
@@ -12,7 +13,7 @@ class Astro extends Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount(){                                              //Fetch call to get all Astronauts currently in Space
     fetch('http://api.open-notify.org/astros.json')
       .then(response => response.json())
       .then(data => {this.setState({ astro: data.people })})
@@ -34,7 +35,7 @@ class Astro extends Component {
         </div>
 
         < MapContainer />
-        
+
       </div>
     );
   }

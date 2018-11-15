@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
+
+// App Components/Images
 import Header from './header.js';
 import Table from './table.js';
-
 import Ground from './../images/mars.jpg';
 
-const marsStyle = {
+
+const marsStyle = {                           //Style for Mars Weather Background
   backgroundImage: `url(${Ground})`,
   backgroundPosition: 'center',
   backgroundSize: 'cover',
@@ -31,7 +33,7 @@ class Mars extends Component {
     this.setState({date: event.target.value});
   }
 
-  photoSearch(event) {
+  photoSearch(event) {                    // API fetch for Mars Rover Phots from NASA based on user input of Date
     event.preventDefault();
     fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${this.state.date}&api_key=W0kxxK1AslOYwTjvlulQwZDQPvp8Ns1fsJ7aZpuP`)
       .then(response => response.json())
@@ -41,7 +43,7 @@ class Mars extends Component {
       })
   }
 
-  componentDidMount() {
+  componentDidMount() {                         // API fetch for Mars Rover latest weather data from NASA
     fetch('https://api.maas2.jiinxt.com')
       .then(response => response.json())
       .then(data => {this.setState({ weather: data })})
@@ -61,10 +63,10 @@ class Mars extends Component {
                 < Table data={this.state.weather}/>
               </div>
           <p>Seven rovers have been sent to Mars starting in 1971.  Enter a date to see if one of these rovers captured pictures of the Mars' surface on that day!</p>
-            <form onSubmit={this.photoSearch}>
+            <form onSubmit={this.photoSearch}>     
                 <label >Enter Date
                     <input
-                      onChange={this.onDateChange}
+                      onChange={this.onDateChange}          //On change of input changes state to user input date
                       placeholder="YYYY-MM-DD"
                       className="date"
                       name='date'
