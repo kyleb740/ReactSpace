@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from './header.js';
+import Table from './table.js';
 
 import Ground from './../images/mars.jpg';
 
@@ -57,16 +58,7 @@ class Mars extends Component {
           <h3>Mars Rovers</h3>
           <p>Here is the most recent weather on Mars sent by the Curiosity Rover:</p>
               <div className="weather" style={ marsStyle }>
-                <table>
-                 <tbody>
-                  <tr><td>Sol (Day on Mars):</td><td>{this.state.weather.sol}</td></tr>
-                  <tr><td>Minimum Temp: </td><td>{this.state.weather.min_temp}c</td></tr>
-                  <tr><td>Maximum Temp: </td><td>{this.state.weather.max_temp}c</td></tr>
-                  <tr><td>Outlook: </td><td>{this.state.weather.atmo_opacity}</td></tr>
-                  <tr><td>Sunrise: </td><td>{this.state.weather.sunrise}</td></tr>
-                  <tr><td>Sunset: </td><td>{this.state.weather.sunset}</td></tr>
-                </tbody>
-                </table>
+                < Table data={this.state.weather}/>
               </div>
           <p>Seven rovers have been sent to Mars starting in 1971.  Enter a date to see if one of these rovers captured pictures of the Mars' surface on that day!</p>
             <form onSubmit={this.photoSearch}>
