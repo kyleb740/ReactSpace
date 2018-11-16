@@ -4,4 +4,5 @@ This project was completed for my Code Louisville React class. The central theme
 To run the project:
   1. clone/download off github
   2. once downloaded run npm install
-  3. then run npm start and the project should open in a new tab in your browser
+  3. enter API_KEY sent via project submission page into Google Maps Component map.js at the very bottom under export Map 
+  4. then run npm start and the project should open in a new tab in your browser
