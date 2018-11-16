@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 
+
 // App Components/Images
 import Header from './header.js';
 import Table from './table.js';
@@ -63,7 +64,7 @@ class Mars extends Component {
                 < Table data={this.state.weather}/>
               </div>
           <p>Seven rovers have been sent to Mars starting in 1971.  Enter a date to see if one of these rovers captured pictures of the Mars' surface on that day!</p>
-            <form onSubmit={this.photoSearch}>     
+            <form onSubmit={this.photoSearch}>
                 <label >Enter Date
                     <input
                       onChange={this.onDateChange}          //On change of input changes state to user input date
