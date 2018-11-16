@@ -63,7 +63,7 @@ class Mars extends Component {
               <div className="weather" style={ marsStyle }>
                 < Table data={this.state.weather}/>
               </div>
-          <p>Seven rovers have been sent to Mars starting in 1971.  Enter a date to see if one of these rovers captured pictures of the Mars' surface on that day!</p>
+          <p>Seven rovers have been sent to Mars starting in 1971.  Enter a date to see if one of these rovers captured pictures of the Mars' surface on that day! Enter dates after August 7, 2012 to get best results.</p>
             <form onSubmit={this.photoSearch}>
                 <label >Enter Date
                     <input
@@ -77,7 +77,7 @@ class Mars extends Component {
             </form>
               <div>
                 {this.state.photo.map(p => (
-                  <img className="marsPhoto" alt="" src={p.img_src}></img>
+                  <img key={p.id} className="marsPhoto" alt="" src={p.img_src}></img>
                 ))}
               </div>
         </div>

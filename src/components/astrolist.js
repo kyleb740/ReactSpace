@@ -8,7 +8,7 @@ const AstroList = props => {
 
   const results = props.data;                                 //Map over Astronaut API fetch call return name and craft
   let lists = results.map(person =>
-    <List name={person.name} craft={person.craft}/>
+    <List key={person.name} name={person.name} craft={person.craft}/>
   );
 
     return (
